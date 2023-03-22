@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-static": "^2.0.1"
+		"@sveltejs/adapter-static": "^2.0.1",
+		"svelte-motion": "^0.11.5"
 	}
 }
