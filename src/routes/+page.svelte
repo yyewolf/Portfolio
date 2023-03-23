@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import { Motion } from 'svelte-motion';
 	import Typewriter from 'svelte-typewriter';
@@ -148,10 +148,10 @@
 <!-- About me section -->
 <section
 	id="about"
-	class="w-full flex items-center bg-neutrals-900 py-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 py-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
 	aria-label="About"
 >
-	<div class="flex justify-center space-x-2 absolute md:bottom-32 bottom-10 heartbeat w-full z-10">
+	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
 		<a href="#tech" class="btn btn-sm variant-ghost-surface">
 			<div class="flex flex-col items-center">
@@ -221,12 +221,10 @@
 <!-- Technologies section -->
 <section
 	id="tech"
-	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 relative z-10 xl:min-h-[900px] min-h-[500px] flex-col md:flex-row bg-slate-900"
 	aria-label="Technologies"
 >
-	<div
-		class="flex justify-center space-x-2 absolute lg:bottom-32 md:bottom-16 bottom-10 heartbeat w-full z-10"
-	>
+	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
 		<a href="#projects" class="btn btn-sm variant-ghost-surface">
 			<div class="flex flex-col items-center">
@@ -284,11 +282,11 @@
 <!-- Projects section -->
 <section
 	id="projects"
-	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
 	aria-label="Projects"
 >
 	<div
-		class="flex justify-center space-x-2 absolute lg:bottom-32 md:bottom-16 bottom-10 heartbeat w-full z-10"
+		class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10"
 	>
 		<!-- Scroll buttons with arrows -->
 		<a href="#contact" class="btn btn-sm variant-ghost-surface">
@@ -333,7 +331,7 @@
 <!-- Projects section -->
 <section
 	id="contact"
-	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
 	aria-label="contact"
 >
 	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
