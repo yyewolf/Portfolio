@@ -1,6 +1,24 @@
 <script>
+// @ts-nocheck
+
 	import { Motion } from 'svelte-motion';
 	import Typewriter from 'svelte-typewriter';
+	import emailjs from '@emailjs/browser';
+
+	/**
+	 * @param {{ target: string | HTMLFormElement; }} e
+	 */
+	function sendEmail(e) {
+		emailjs.sendForm('service_wehsins', 'template_4bpdsb9', e.target, 'cfiuVCzmLcrYWf-9N').then(
+			(result) => {
+				console.log('SUCCESS!', result.text);
+			},
+			(error) => {
+				console.log('FAILED...', error.text);
+			}
+		);
+	}
+
 	const variants = {
 		visible: { opacity: 1, x: 0 },
 		hidden: { opacity: 0, x: -500 }
@@ -322,7 +340,7 @@
 		<div class="flex flex-col md:flex-row h-full w-full justify-center">
 			<!-- I want 3 fields: name, email & message -->
 			<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md w-full">
-				<form action="#" class="space-y-8">
+				<form class="space-y-8" on:submit|preventDefault={sendEmail}>
 					<div>
 						<label
 							for="email"
@@ -332,6 +350,7 @@
 						<input
 							type="email"
 							id="email"
+							name="reply_to"
 							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
 							placeholder="email@example.com"
 							required
@@ -345,6 +364,7 @@
 						<input
 							type="text"
 							id="subject"
+							name="from_subject"
 							class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
 							placeholder="Title of your message"
 							required
@@ -358,6 +378,7 @@
 						>
 						<textarea
 							id="message"
+							name="message"
 							rows="6"
 							class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 							placeholder="Your message here..."

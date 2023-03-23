@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^3.10.0",
 		"@sveltejs/adapter-static": "^2.0.1",
 		"svelte-motion": "^0.11.5"
 	}

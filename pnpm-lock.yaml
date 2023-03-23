@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emailjs/browser': ^3.10.0
   '@skeletonlabs/skeleton': ^1.0.0
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/adapter-static': ^2.0.1
@@ -27,6 +28,7 @@ specifiers:
   vite: ^4.2.0
 
 dependencies:
+  '@emailjs/browser': 3.10.0
   '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.13.0
   svelte-motion: 0.11.5_svelte@3.57.0
 
@@ -55,6 +57,11 @@ devDependencies:
   vite: 4.2.1
 
 packages:
+
+  /@emailjs/browser/3.10.0:
+    resolution: {integrity: sha512-pregUOBkSjjctQoAgn8DcSaeY4ypHjXAJEzWlJysM3RkQXw1ulavfHva3YYeAkxfJ7qbIhpyvRmhyQlgNG4GVg==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@esbuild/android-arm/0.17.12:
     resolution: {integrity: sha512-E/sgkvwoIfj4aMAPL2e35VnUJspzVYl7+M1B2cqeubdBhADV4uPon0KCc8p2G+LqSJ6i8ocYPCqY3A4GGq0zkQ==}
