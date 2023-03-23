@@ -1,42 +1,456 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script>
+	import { Motion } from 'svelte-motion';
+	import Typewriter from 'svelte-typewriter';
+	const variants = {
+		visible: { opacity: 1, x: 0 },
+		hidden: { opacity: 0, x: -500 }
+	};
+	let i = 1;
+	$: t = [0, 360][i];
+	$: v = ['hidden', 'visible'][i];
 
-<div class="container h-full mx-auto flex justify-center items-center">
+	// I need HTML5, CSS3, JS, Vue, K3S, Tailwind, Git, Docker, Go, Python, Java, C, V, PSQL, MySQL and EdgeDB
+	var logos = [
+		{
+			alt: 'HTML5',
+			src: 'https://cdn.svgporn.com/logos/html-5.svg',
+			link: 'https://www.w3schools.com/html/'
+		},
+		{
+			alt: 'CSS3',
+			src: 'https://cdn.svgporn.com/logos/css-3.svg',
+			link: 'https://www.w3schools.com/css/'
+		},
+		{
+			alt: 'JavaScript',
+			src: 'https://cdn.svgporn.com/logos/javascript.svg',
+			link: 'https://www.w3schools.com/js/'
+		},
+		{
+			alt: 'Vue',
+			src: 'https://cdn.svgporn.com/logos/vue.svg',
+			link: 'https://vuejs.org/'
+		},
+		{
+			alt: 'K3S',
+			src: 'https://cdn.svgporn.com/logos/kubernetes.svg',
+			link: 'https://k3s.io/'
+		},
+		{
+			alt: 'Tailwind',
+			src: 'https://cdn.svgporn.com/logos/tailwindcss-icon.svg',
+			link: 'https://tailwindcss.com/'
+		},
+		{
+			alt: 'Git',
+			src: 'https://cdn.svgporn.com/logos/git-icon.svg',
+			link: 'https://git-scm.com/'
+		},
+		{
+			alt: 'Docker',
+			src: 'https://cdn.svgporn.com/logos/docker-icon.svg',
+			link: 'https://www.docker.com/'
+		},
+		{
+			alt: 'Go',
+			src: 'https://cdn.svgporn.com/logos/go.svg',
+			link: 'https://go.dev/'
+		},
+		{
+			alt: 'Python',
+			src: 'https://cdn.svgporn.com/logos/python.svg',
+			link: 'https://www.python.org/'
+		},
+		{
+			alt: 'Java',
+			src: 'https://cdn.svgporn.com/logos/java.svg',
+			link: 'https://www.java.com/'
+		},
+		{
+			alt: 'C',
+			src: 'https://cdn.svgporn.com/logos/c.svg',
+			link: 'https://www.cprogramming.com/'
+		},
+		{
+			alt: 'V',
+			src: 'https://vlang.io/img/v-logo.png',
+			link: 'https://vlang.io/'
+		},
+		{
+			alt: 'PostgreSQL',
+			src: 'https://cdn.svgporn.com/logos/postgresql.svg',
+			link: 'https://www.postgresql.org/'
+		},
+		{
+			alt: 'MySQL',
+			src: 'https://cdn.svgporn.com/logos/mysql.svg',
+			link: 'https://www.mysql.com/'
+		}
+	];
+</script>
+
+<!-- This is the hero/home -->
+<section
+	id="home"
+	class="h-screen w-full bg-brand bg-center bg-no-repeat bg-[length:105%_105%] flex py-28 justify-center items-center transition-all duration-75 sticky top-0"
+>
 	<div class="space-y-10 text-center">
-		<h2 class="font-bold">Welcome to Skeleton.</h2>
+		<h2 class="font-bold">Hi, I'm Yewolf.</h2>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
-			<svg
-				class="fill-token -scale-x-[100%]"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 200 200"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M98.77 50.95c25.1 0 46.54 8.7 61.86 23a41.34 41.34 0 0 0 5.19-1.93c4.35-2.02 10.06-6.17 17.13-12.43-1.15 10.91-2.38 18.93-3.7 24.04-.7 2.75-1.8 6.08-3.3 10a80.04 80.04 0 0 1 8.42 23.33c6.04 30.3-4.3 43.7-28.33 51.18.18.9.32 1.87.42 2.9.86 8.87-3.62 23.19-9 23.19-3.54 0-5.84-4.93-8.3-12.13-.78 8.34-4.58 17.9-8.98 17.9-4.73 0-7.25-8.84-10.93-20.13a214 214 0 0 1-.64 2.93l-.16.71-.16.71-.17.71c-1.84 7.58-4.46 15.07-8.5 15.07-5.06 0-2.29-15.9-10.8-22.63-43.14 2.36-79.43-13.6-79.43-59.62 0-8.48 2-16.76 5.69-24.45a93.72 93.72 0 0 1-1.77-3.68c-2.87-6.32-6.3-15.88-10.31-28.7 10.26 7.66 18.12 12.22 23.6 13.68.5.14 1.02.26 1.57.36 14.36-14.44 35.88-24.01 60.6-24.01Zm-9.99 62.3c-14.57 0-26.39 11.45-26.39 25.58 0 14.14 11.82 25.6 26.39 25.6s26.39-11.46 26.39-25.6c0-13.99-11.58-25.35-25.95-25.58Zm37.45 31.95c-4.4 0-6.73 9.4-6.73 13.62 0 3.3 1.1 5.12 2.9 5.45 4.39.4 3.05-5.97 5.23-5.97 1.06 0 2.2 1.35 3.34 2.73l.34.42c1.25 1.52 2.5 2.93 3.64 2.49 2.7-1.61 1.67-5.12.74-7.88-3.3-6.96-5.05-10.86-9.46-10.86Zm-36.85-28.45c12.57 0 22.76 9.78 22.76 21.85 0 12.07-10.2 21.85-22.76 21.85-.77 0-1.53-.04-2.29-.11 11.5-1.1 20.46-10.42 20.46-21.74 0-11.32-8.97-20.63-20.46-21.74.76-.07 1.52-.1 2.3-.1Zm65.54-5c-10.04 0-18.18 10.06-18.18 22.47 0 12.4 8.14 22.47 18.18 22.47s18.18-10.06 18.18-22.47c0-12.41-8.14-22.48-18.18-22.48Zm.6 3.62c8.38 0 15.16 8.4 15.16 18.74 0 10.35-6.78 18.74-15.16 18.74-.77 0-1.54-.07-2.28-.21 7.3-1.36 12.89-9.14 12.89-18.53 0-9.4-5.6-17.17-12.89-18.53.74-.14 1.5-.2 2.28-.2Zm3.34-72.27.12.07c.58.38.75 1.16.37 1.74l-2.99 4.6c-.35.55-1.05.73-1.61.44l-.12-.07a1.26 1.26 0 0 1-.37-1.74l2.98-4.6a1.26 1.26 0 0 1 1.62-.44ZM39.66 42l.08.1 2.76 3.93a1.26 1.26 0 0 1-2.06 1.45l-2.76-3.94A1.26 1.26 0 0 1 39.66 42Zm63.28-42 2.85 24.13 10.62-11.94.28 29.72-2.1-.47a77.8 77.8 0 0 0-16.72-2.04c-4.96 0-9.61.67-13.96 2l-2.34.73L83.5 4.96l9.72 18.37L102.94 0Zm-1.87 13.39-7.5 17.96-7.3-13.8-1.03 19.93.22-.06a51.56 51.56 0 0 1 12.1-1.45h.31c4.58 0 9.58.54 15 1.61l.35.07-.15-16.54-9.79 11-2.21-18.72Zm38.86 19.23c.67.2 1.05.89.86 1.56l-.38 1.32c-.17.62-.8 1-1.42.89l-.13-.03a1.26 1.26 0 0 1-.86-1.56l.38-1.32c.19-.66.88-1.05 1.55-.86ZM63.95 31.1l.05.12.7 2.17a1.26 1.26 0 0 1-2.34.9l-.04-.12-.71-2.17a1.26 1.26 0 0 1 2.34-.9Z"
-				/>
-			</svg>
+			<Motion initial="hidden" animate={v} {variants} let:motion>
+				<img use:motion src="logo.png" alt="Skeleton Logo" />
+			</Motion>
 		</figure>
 		<!-- / -->
-		<div class="flex justify-center space-x-2">
-			<a
-				class="btn btn-filled"
-				href="https://skeleton.dev/"
-				target="_blank"
-				rel="noreferrer"
-			>
-				Launch Documentation
+		<div class="flex justify-center space-x-2 bottom-0 heartbeat">
+			<!-- Scroll buttons with arrows -->
+			<a href="#about" class="btn btn-sm variant-ghost-surface">
+				<div class="flex flex-col items-center">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-8 w-8"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M19 14l-7 7m0 0l-7-7m7 7V3"
+						/>
+					</svg>
+				</div>
 			</a>
 		</div>
-		<div class="space-y-2">
-			<p>Try editing the following:</p>
-			<p><code>/src/routes/+layout.svelte</code></p>
-			<p><code>/src/routes/+page.svelte</code></p>
+	</div>
+</section>
+<!-- About me section -->
+<section
+	id="about"
+	class="w-full flex items-center bg-neutrals-900 py-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	aria-label="About"
+>
+	<div class="flex justify-center space-x-2 absolute md:bottom-32 bottom-10 heartbeat w-full z-10">
+		<!-- Scroll buttons with arrows -->
+		<a href="#tech" class="btn btn-sm variant-ghost-surface">
+			<div class="flex flex-col items-center">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-8 w-8"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 14l-7 7m0 0l-7-7m7 7V3"
+					/>
+				</svg>
+			</div>
+		</a>
+	</div>
+	<img
+		class="object-cover object-center w-full max-h-screen relative md:top-0 -top-28 right-0 md:w-1/2 md:h-full md:pr-10 xl:pr-0 md:absolute"
+		loading="lazy"
+		src="wp1.jpg"
+		width="756"
+		alt="placeholder"
+		height="1008"
+	/>
+	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
+		<div class="flex flex-col md:flex-row h-full w-full">
+			<div class="basis-1/2 md:self-center">
+				<div
+					class="font-display font-bold text-brand lg:text-xl text-xl uppercase text-purple-400 mb-4"
+				>
+					About
+				</div>
+				<Typewriter mode="loop" interval={100}>
+					<span class="text-4xl font-mono uppercase">Developer</span>
+					<span class="text-4xl font-mono uppercase">Problem Solver</span>
+					<span class="text-4xl font-mono uppercase">Explorer</span>
+					<span class="text-4xl font-mono uppercase">Fast learner</span>
+				</Typewriter>
+				<p class="text-neutrals-50/60 leading-relaxed max-w-prose mt-4 text-slate-400">
+					Hi, I'm Yewolf, a passionate developer who loves crafting beautiful and efficient
+					software. With years of experience in coding and a solid understanding of different
+					programming languages and frameworks, I'm always eager to take on new challenges and learn
+					from them. Whether I'm working on a complex backend architecture or a sleek frontend
+					interface, my goal is to deliver top-notch solutions that exceed expectations. When I'm
+					not coding, you can find me playing my favorite video games or playing table tennis. Let's
+					connect and bring your ideas to life!
+				</p>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
+<!-- Spacer -->
+<section class="w-full z-10 relative h-2 py-28 bg-slate-100">
+	<div class="mx-auto w-10/12 2xl:w-[80%] text-center">
+		<div
+			class="font-display font-bold text-brand lg:text-xl text-xl uppercase text-purple-800 mb-4"
+		>
+			Technologies used
+		</div>
+		<div class="font-display font-bold text-neutral-900 text-4xl md:text-4xl mb-8">What I use</div>
+	</div>
+</section>
+<!-- Technologies section -->
+<section
+	id="tech"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	aria-label="Technologies"
+>
+	<div
+		class="flex justify-center space-x-2 absolute lg:bottom-32 md:bottom-16 bottom-10 heartbeat w-full z-10"
+	>
+		<!-- Scroll buttons with arrows -->
+		<a href="#projects" class="btn btn-sm variant-ghost-surface">
+			<div class="flex flex-col items-center">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-8 w-8"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 14l-7 7m0 0l-7-7m7 7V3"
+					/>
+				</svg>
+			</div>
+		</a>
+	</div>
+	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
+		<div class="flex flex-col md:flex-row h-full w-full justify-center">
+			<!-- Add a cloud of technologies -->
+			<div class="grid justify-center grid-cols-5">
+				{#each logos as tech}
+					<Motion whileHover={{ scale: 1.8 }} initial={{ borderRadius: 25 }} let:motion>
+						<a
+							title={tech.alt}
+							use:motion
+							href={tech.link}
+							target="_blank"
+							class="flex flex-col items-center justify-center m-4"
+						>
+							<img class="h-16 w-16" src={tech.src} alt={tech.alt} />
+						</a>
+					</Motion>
+				{/each}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Spacer -->
+<section class="w-full z-10 relative h-2 py-28 bg-slate-100">
+	<div class="mx-auto w-10/12 2xl:w-[80%] text-center">
+		<div
+			class="font-display font-bold text-brand lg:text-xl text-xl uppercase text-purple-800 mb-4"
+		>
+			My projects
+		</div>
+		<div class="font-display font-bold text-neutral-900 text-4xl md:text-4xl mb-8">
+			What I've done
+		</div>
+	</div>
+</section>
+<!-- Projects section -->
+<section
+	id="projects"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	aria-label="Projects"
+>
+	<div
+		class="flex justify-center space-x-2 absolute lg:bottom-32 md:bottom-16 bottom-10 heartbeat w-full z-10"
+	>
+		<!-- Scroll buttons with arrows -->
+		<a href="#contact" class="btn btn-sm variant-ghost-surface">
+			<div class="flex flex-col items-center">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-8 w-8"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 14l-7 7m0 0l-7-7m7 7V3"
+					/>
+				</svg>
+			</div>
+		</a>
+	</div>
+	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
+		<div class="flex flex-col md:flex-row h-full w-full justify-center">
+			<!-- Add a cloud of technologies -->
+			To be filled...
+		</div>
+	</div>
+</section>
+<!-- Spacer -->
+<section class="w-full z-10 relative h-2 py-28 bg-slate-100">
+	<div class="mx-auto w-10/12 2xl:w-[80%] text-center">
+		<div
+			class="font-display font-bold text-brand lg:text-xl text-xl uppercase text-purple-800 mb-4"
+		>
+			Contact
+		</div>
+		<div class="font-display font-bold text-neutral-900 text-4xl md:text-4xl mb-8">
+			How to contact me
+		</div>
+	</div>
+</section>
+<!-- Projects section -->
+<section
+	id="contact"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	aria-label="contact"
+>
+	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
+		<div class="flex flex-col md:flex-row h-full w-full justify-center">
+			<!-- I want 3 fields: name, email & message -->
+			<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md w-full">
+				<form action="#" class="space-y-8">
+					<div>
+						<label
+							for="email"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+							>Your email</label
+						>
+						<input
+							type="email"
+							id="email"
+							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+							placeholder="email@example.com"
+							required
+						/>
+					</div>
+					<div>
+						<label
+							for="subject"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label
+						>
+						<input
+							type="text"
+							id="subject"
+							class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+							placeholder="Title of your message"
+							required
+						/>
+					</div>
+					<div class="sm:col-span-2">
+						<label
+							for="message"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+							>Your message</label
+						>
+						<textarea
+							id="message"
+							rows="6"
+							class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Your message here..."
+						/>
+					</div>
+					<button
+						type="submit"
+						class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+						>Send message</button
+					>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
 
 <style lang="postcss">
+	:root {
+		--cursor-color: #fff;
+	}
+
+	.heartbeat {
+		-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+		animation: heartbeat 1.5s ease-in-out infinite both;
+	}
+	@-webkit-keyframes heartbeat {
+		from {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: center center;
+			transform-origin: center center;
+			-webkit-animation-timing-function: ease-out;
+			animation-timing-function: ease-out;
+		}
+		10% {
+			-webkit-transform: scale(0.91);
+			transform: scale(0.91);
+			-webkit-animation-timing-function: ease-in;
+			animation-timing-function: ease-in;
+		}
+		17% {
+			-webkit-transform: scale(0.98);
+			transform: scale(0.98);
+			-webkit-animation-timing-function: ease-out;
+			animation-timing-function: ease-out;
+		}
+		33% {
+			-webkit-transform: scale(0.87);
+			transform: scale(0.87);
+			-webkit-animation-timing-function: ease-in;
+			animation-timing-function: ease-in;
+		}
+		45% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-animation-timing-function: ease-out;
+			animation-timing-function: ease-out;
+		}
+	}
+	@keyframes heartbeat {
+		from {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: center center;
+			transform-origin: center center;
+			-webkit-animation-timing-function: ease-out;
+			animation-timing-function: ease-out;
+		}
+		10% {
+			-webkit-transform: scale(0.91);
+			transform: scale(0.91);
+			-webkit-animation-timing-function: ease-in;
+			animation-timing-function: ease-in;
+		}
+		17% {
+			-webkit-transform: scale(0.98);
+			transform: scale(0.98);
+			-webkit-animation-timing-function: ease-out;
+			animation-timing-function: ease-out;
+		}
+		33% {
+			-webkit-transform: scale(0.87);
+			transform: scale(0.87);
+			-webkit-animation-timing-function: ease-in;
+			animation-timing-function: ease-in;
+		}
+		45% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-animation-timing-function: ease-out;
+			animation-timing-function: ease-out;
+		}
+	}
 	figure {
 		@apply flex relative flex-col;
 	}
@@ -46,8 +460,7 @@
 	}
 	.img-bg {
 		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
-		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite,
-			glow 5s linear infinite;
+		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite, glow 5s linear infinite;
 	}
 	@keyframes glow {
 		0% {
