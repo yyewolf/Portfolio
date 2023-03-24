@@ -4,7 +4,6 @@
 	import { Motion } from 'svelte-motion';
 	import Typewriter from 'svelte-typewriter';
 	import emailjs from '@emailjs/browser';
-
 	/**
 	 * @param {{ target: string | HTMLFormElement; }} e
 	 */
@@ -124,7 +123,7 @@
 		<!-- / -->
 		<div class="flex justify-center space-x-2 bottom-0 heartbeat">
 			<!-- Scroll buttons with arrows -->
-			<a href="#about" class="btn btn-sm variant-ghost-surface">
+			<a href="#about" class="btn btn-sm variant-ghost-surface h-12 w-12">
 				<div class="flex flex-col items-center">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +152,7 @@
 >
 	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
-		<a href="#tech" class="btn btn-sm variant-ghost-surface">
+		<a href="#tech" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +225,7 @@
 >
 	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
-		<a href="#projects" class="btn btn-sm variant-ghost-surface">
+		<a href="#projects" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -285,11 +284,9 @@
 	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
 	aria-label="Projects"
 >
-	<div
-		class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10"
-	>
+	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
-		<a href="#contact" class="btn btn-sm variant-ghost-surface">
+		<a href="#contact" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -308,10 +305,27 @@
 			</div>
 		</a>
 	</div>
-	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
-		<div class="flex flex-col md:flex-row h-full w-full justify-center">
-			<!-- Add a cloud of technologies -->
-			To be filled...
+
+	<div class="logo-cloud grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-0.5 w-full px-32">
+		<label for="modal-place" class="logo-item hover:cursor-pointer hover:bg-slate-800">TN Place</label>
+	</div>
+
+
+	<!-- Put this part before </body> tag -->
+	<input type="checkbox" id="modal-place" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<!-- Image on top to represent the project -->
+			<img src="place.png" class="w-full" alt="TN Place" />
+			<h3 class="font-bold text-lg">TN Place</h3>
+			<p class="py-4">
+				A "r/place" clone made with SvelteKit and Golang. It's a real-time collaborative drawing board
+				where users can draw pixels on a grid. The project was hosted on Kubernetes.
+			</p>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://github.com/yyewolf/tn-place" target="_blank">Github</a>
+				<label for="modal-place" class="btn">Close</label>
+			</div>
 		</div>
 	</div>
 </section>
@@ -349,7 +363,7 @@
 							type="email"
 							id="email"
 							name="reply_to"
-							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+							class="textarea"
 							placeholder="email@example.com"
 							required
 						/>
@@ -363,7 +377,7 @@
 							type="text"
 							id="subject"
 							name="from_subject"
-							class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+							class="textarea"
 							placeholder="Title of your message"
 							required
 						/>
@@ -378,7 +392,7 @@
 							id="message"
 							name="message"
 							rows="6"
-							class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							class="textarea"
 							placeholder="Your message here..."
 						/>
 					</div>
