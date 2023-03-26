@@ -4,6 +4,7 @@
 	import { Motion } from 'svelte-motion';
 	import Typewriter from 'svelte-typewriter';
 	import emailjs from '@emailjs/browser';
+	import { Avatar } from '@skeletonlabs/skeleton';
 	/**
 	 * @param {{ target: string | HTMLFormElement; }} e
 	 */
@@ -147,10 +148,10 @@
 <!-- About me section -->
 <section
 	id="about"
-	class="w-full flex items-center bg-neutrals-900 py-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 py-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
 	aria-label="About"
 >
-	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
+	<div class="flex justify-center space-x-2 absolute xl:bottom-32 bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
 		<a href="#tech" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
@@ -220,10 +221,10 @@
 <!-- Technologies section -->
 <section
 	id="tech"
-	class="w-full flex items-center bg-neutrals-900 relative z-10 xl:min-h-[900px] min-h-[500px] flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 relative z-10 xl:min-h-screen min-h-[500px] flex-col md:flex-row bg-slate-900"
 	aria-label="Technologies"
 >
-	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
+	<div class="flex justify-center space-x-2 absolute xl:bottom-32 bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
 		<a href="#projects" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
@@ -281,10 +282,10 @@
 <!-- Projects section -->
 <section
 	id="projects"
-	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
 	aria-label="Projects"
 >
-	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
+	<div class="flex justify-center space-x-2 absolute xl:bottom-32 bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
 		<a href="#contact" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
@@ -307,11 +308,23 @@
 	</div>
 
 	<div class="logo-cloud grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-0.5 w-full px-32">
-		<label for="modal-place" class="logo-item hover:cursor-pointer hover:bg-slate-800">TN Place</label>
+		<label for="modal-place" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			TN Place
+		</label>
+		<label for="modal-utn" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			Cyber Est'cape
+		</label>
+		<label for="modal-utn" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			UniversaliTN
+		</label>
+		<label for="modal-rwby" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			RWBY Adventures
+		</label>
+		<label for="modal-superlight" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			Superlight
+		</label>
 	</div>
 
-
-	<!-- Put this part before </body> tag -->
 	<input type="checkbox" id="modal-place" class="modal-toggle" />
 	<div class="modal">
 		<div class="modal-box">
@@ -319,12 +332,98 @@
 			<img src="place.png" class="w-full" alt="TN Place" />
 			<h3 class="font-bold text-lg">TN Place</h3>
 			<p class="py-4">
-				A "r/place" clone made with SvelteKit and Golang. It's a real-time collaborative drawing board
-				where users can draw pixels on a grid. The project was hosted on Kubernetes.
+				A "r/place" clone made with SvelteKit and Golang. It's a real-time collaborative drawing
+				board where users can draw pixels on a grid. The project was hosted on Kubernetes.
 			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/html-5.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/css-3.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/javascript.svg" />
+			</div>
 			<div class="modal-action">
-				<a class="btn btn-primary" href="https://github.com/yyewolf/tn-place" target="_blank">Github</a>
+				<a class="btn btn-primary" href="https://github.com/yyewolf/tn-place" target="_blank"
+					>Github</a
+				>
 				<label for="modal-place" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-utn" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<!-- Image on top to represent the project -->
+			<div class="flex flex-row mt-2 justify-center">
+				<Avatar src="utn.png" class="w-32"  />
+			</div>
+			<h3 class="font-bold text-lg">UniversaliTN</h3>
+			<p class="py-4">
+				A Discord bot made specifically for TELECOM Nancy's students discord server.
+				It allows for authentication through our workspace and adds nice features.
+				It also handles syncing with Root-Me scoreboards.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/html-5.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://gitlab.com/telecomnancy.net/public-applications/universalitn" target="_blank"
+					>Github</a
+				>
+				<label for="modal-utn" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-rwby" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<!-- Image on top to represent the project -->
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="justify-center" src="rwby.png" alt="RWBY Adventures" />
+			</div>
+			<h3 class="font-bold text-lg">RWBY Adventures</h3>
+			<p class="py-4">
+				A Discord bot, rewritten in 2021 and still live.
+				It's a gacha bot where the goal is to collect characters and play with them.
+				You also have access to a market for trading, and different mini games.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/html-5.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/css-3.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/vue.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://top.gg/bot/602105650968920094" target="_blank"
+					>Top.gg</a
+				>
+				<label for="modal-rwby" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-superlight" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<!-- Image on top to represent the project -->
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="justify-center" src="tuya.png" alt="Superlight" />
+			</div>
+			<h3 class="font-bold text-lg">Superlight</h3>
+			<p class="py-4">
+				A fun experiment where you can control chinese smart lights and sync them with your screen.
+				It works suprisingly well.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://github.com/yyewolf/Superlight" target="_blank"
+					>Github</a
+				>
+				<label for="modal-superlight" class="btn">Close</label>
 			</div>
 		</div>
 	</div>
@@ -345,7 +444,7 @@
 <!-- Projects section -->
 <section
 	id="contact"
-	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-[900px] flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
 	aria-label="contact"
 >
 	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
@@ -406,6 +505,13 @@
 		</div>
 	</div>
 </section>
+
+<!-- Footer -->
+<footer class="footer footer-center p-4 bg-slate-700 text-base-content">
+	<div>
+		<p>Fait avec ♥ par Yewolf.</p>
+	</div>
+</footer>
 
 <style lang="postcss">
 	:root {
