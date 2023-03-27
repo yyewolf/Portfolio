@@ -282,7 +282,7 @@
 <!-- Projects section -->
 <section
 	id="projects"
-	class="w-full flex items-center bg-neutrals-900 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
+	class="w-full flex items-center bg-neutrals-900 xl:pt-0 pt-16 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
 	aria-label="Projects"
 >
 	<div class="flex justify-center space-x-2 absolute xl:bottom-32 bottom-10 heartbeat w-full z-10">
@@ -310,9 +310,6 @@
 	<div class="logo-cloud grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-0.5 w-full px-32">
 		<label for="modal-place" class="logo-item hover:cursor-pointer hover:bg-slate-800">
 			TN Place
-		</label>
-		<label for="modal-utn" class="logo-item hover:cursor-pointer hover:bg-slate-800">
-			Cyber Est'cape
 		</label>
 		<label for="modal-utn" class="logo-item hover:cursor-pointer hover:bg-slate-800">
 			UniversaliTN
