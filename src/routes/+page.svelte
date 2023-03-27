@@ -1,23 +1,42 @@
-<script>
+<script lang="ts">
 	// @ts-nocheck
 
 	import { Motion } from 'svelte-motion';
 	import Typewriter from 'svelte-typewriter';
 	import emailjs from '@emailjs/browser';
 	import { Avatar } from '@skeletonlabs/skeleton';
+	import { toastStore } from '@skeletonlabs/skeleton';
+	import type { ToastSettings } from '@skeletonlabs/skeleton';
+
 	/**
 	 * @param {{ target: string | HTMLFormElement; }} e
 	 */
 	function sendEmail(e) {
+		isSendEnabled = false;
+
 		emailjs.sendForm('service_wehsins', 'template_4bpdsb9', e.target, 'cfiuVCzmLcrYWf-9N').then(
 			(result) => {
-				console.log('SUCCESS!', result.text);
+				const t: ToastSettings = {
+					message: 'Your mail has been sent!',
+					classes: 'toast-center toast-bottom w-64 mb-10',
+					timeout: 5000
+				};
+				toastStore.trigger(t);
+				isSendEnabled = true;
 			},
 			(error) => {
-				console.log('FAILED...', error.text);
+				const t: ToastSettings = {
+					message: 'There has been an error sending your mail.',
+					classes: 'toast-center alert-warning toast-bottom w-64 mb-10',
+					timeout: 5000
+				};
+				toastStore.trigger(t);
+				isSendEnabled = true;
 			}
 		);
 	}
+
+	let isSendEnabled = true;
 
 	const variants = {
 		visible: { opacity: 1, x: 0 },
@@ -352,21 +371,23 @@
 		<div class="modal-box">
 			<!-- Image on top to represent the project -->
 			<div class="flex flex-row mt-2 justify-center">
-				<Avatar src="utn.png" class="w-32"  />
+				<Avatar src="utn.png" class="w-32" />
 			</div>
 			<h3 class="font-bold text-lg">UniversaliTN</h3>
 			<p class="py-4">
-				A Discord bot made specifically for TELECOM Nancy's students discord server.
-				It allows for authentication through our workspace and adds nice features.
-				It also handles syncing with Root-Me scoreboards.
+				A Discord bot made specifically for TELECOM Nancy's students discord server. It allows for
+				authentication through our workspace and adds nice features. It also handles syncing with
+				Root-Me scoreboards.
 			</p>
 			<div class="flex flex-row mt-2 justify-center">
 				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
 				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/html-5.svg" />
 			</div>
 			<div class="modal-action">
-				<a class="btn btn-primary" href="https://gitlab.com/telecomnancy.net/public-applications/universalitn" target="_blank"
-					>Github</a
+				<a
+					class="btn btn-primary"
+					href="https://gitlab.com/telecomnancy.net/public-applications/universalitn"
+					target="_blank">Github</a
 				>
 				<label for="modal-utn" class="btn">Close</label>
 			</div>
@@ -382,9 +403,9 @@
 			</div>
 			<h3 class="font-bold text-lg">RWBY Adventures</h3>
 			<p class="py-4">
-				A Discord bot, rewritten in 2021 and still live.
-				It's a gacha bot where the goal is to collect characters and play with them.
-				You also have access to a market for trading, and different mini games.
+				A Discord bot, rewritten in 2021 and still live. It's a gacha bot where the goal is to
+				collect characters and play with them. You also have access to a market for trading, and
+				different mini games.
 			</p>
 			<div class="flex flex-row mt-2 justify-center">
 				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
@@ -494,6 +515,7 @@
 					</div>
 					<button
 						type="submit"
+						disabled={!isSendEnabled}
 						class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
 						>Send message</button
 					>

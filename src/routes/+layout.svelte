@@ -7,8 +7,13 @@
 	import '../app.postcss';
 	import { Avatar, AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { Motion } from 'svelte-motion';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
+
+	import { Toast, toastStore } from '@skeletonlabs/skeleton';
 </script>
+
+
+
+<Toast position="b" />
 
 <!-- App Shell -->
 <!-- svelte-ignore a11y-invalid-attribute -->
