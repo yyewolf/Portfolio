@@ -5,6 +5,7 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
+	import '../app.css';
 	import { Avatar, AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { Motion } from 'svelte-motion';
 
