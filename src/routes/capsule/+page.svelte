@@ -25,7 +25,7 @@
 	});
 </script>
 
-<div class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+<div class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" id="contact">
 	{#if days < 0}
 		<div class="text-center text-4xl font-bold text-neutral-content mb-10">
 			Go open it !
