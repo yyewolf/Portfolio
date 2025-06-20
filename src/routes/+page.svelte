@@ -69,6 +69,11 @@
 			link: 'https://vuejs.org/'
 		},
 		{
+			alt: 'Svelte',
+			src: 'https://cdn.svgporn.com/logos/svelte-icon.svg',
+			link: 'https://svelte.dev/'
+		},
+		{
 			alt: 'K3S',
 			src: 'https://cdn.svgporn.com/logos/kubernetes.svg',
 			link: 'https://k3s.io/'
@@ -214,14 +219,19 @@
 					<span class="text-4xl font-mono uppercase">Fast learner</span>
 				</Typewriter>
 				<p class="text-neutrals-50/60 leading-relaxed max-w-prose mt-4 text-slate-400">
-					Hi, I'm Yewolf, a passionate developer who loves crafting beautiful and efficient
-					software. With years of experience in coding and a solid understanding of different
-					programming languages and frameworks, I'm always eager to take on new challenges and learn
-					from them. Whether I'm working on a complex backend architecture or a sleek frontend
-					interface, my goal is to deliver top-notch solutions that exceed expectations. When I'm
-					not coding, you can find me playing my favorite video games or playing table tennis. Let's
-					connect and bring your ideas to life!
+					Hi, I'm Yewolf, a passionate developer who specializes in Go and distributed systems. With years of experience building efficient software solutions, I've created various tools for container isolation, continuous deployment, and infrastructure management. My GitHub (yyewolf) showcases numerous projects including Discord bots, web applications, and utilities for Docker ecosystems. 
 				</p>
+				<p class="text-neutrals-50/60 leading-relaxed max-w-prose mt-4 text-slate-400">
+					I enjoy solving complex problems, optimizing performance, and building reliable systems. Beyond backend architecture, I also work with modern frontend frameworks to deliver comprehensive full-stack solutions. When I'm not coding, you can find me playing my favorite video games or table tennis. Let's connect and bring your ideas to life!
+				</p>
+				<div class="mt-4">
+					<a href="https://github.com/yyewolf" target="_blank" class="btn btn-sm btn-outline">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+							<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+						</svg>
+						GitHub
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -327,14 +337,26 @@
 	</div>
 
 	<div class="logo-cloud grid-cols-1 xl:grid-cols-2 2xl:grid-cols-4 gap-0.5 w-full px-32">
-		<label for="modal-place" class="logo-item hover:cursor-pointer hover:bg-slate-800">
-			TN Place
-		</label>
-		<label for="modal-utn" class="logo-item hover:cursor-pointer hover:bg-slate-800">
-			UniversaliTN
+		<label for="modal-terraform" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			Terraform Provider Infomaniak
 		</label>
 		<label for="modal-rwby" class="logo-item hover:cursor-pointer hover:bg-slate-800">
 			RWBY Adventures
+		</label>
+		<label for="modal-i" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			4T$ Instance Operator
+		</label>
+		<label for="modal-place" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			TN Place
+		</label>
+		<label for="modal-gocd" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			Go CD
+		</label>
+		<label for="modal-entvis" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			EntVis
+		</label>
+		<label for="modal-utn" class="logo-item hover:cursor-pointer hover:bg-slate-800">
+			UniversaliTN
 		</label>
 		<label for="modal-superlight" class="logo-item hover:cursor-pointer hover:bg-slate-800">
 			Superlight
@@ -401,20 +423,21 @@
 			<div class="flex flex-row mt-2 justify-center">
 				<img class="justify-center" src="rwby.png" alt="RWBY Adventures" />
 			</div>
-			<h3 class="font-bold text-lg">RWBY Adventures</h3>
+			<h3 class="font-bold text-lg">RWBY Adventures 3</h3>
 			<p class="py-4">
-				A Discord bot, rewritten in 2021 and still live. It's a gacha bot where the goal is to
-				collect characters and play with them. You also have access to a market for trading, and
-				different mini games.
+				The latest version of my popular Discord bot. RWBY Adventures is a gacha game where players collect characters, trade on the market, and play mini-games. Version 3 includes a full rewrite with improved architecture, web interface, and new game mechanics.
 			</p>
 			<div class="flex flex-row mt-2 justify-center">
 				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
 				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/html-5.svg" />
 				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/css-3.svg" />
-				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/vue.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/javascript.svg" />
 			</div>
 			<div class="modal-action">
-				<a class="btn btn-primary" href="https://top.gg/bot/602105650968920094" target="_blank"
+				<a class="btn btn-primary" href="https://github.com/yyewolf/rwbyadv3" target="_blank"
+					>Github</a
+				>
+				<a class="btn btn-secondary" href="https://top.gg/bot/602105650968920094" target="_blank"
 					>Top.gg</a
 				>
 				<label for="modal-rwby" class="btn">Close</label>
@@ -442,6 +465,85 @@
 					>Github</a
 				>
 				<label for="modal-superlight" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-gocd" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<h3 class="font-bold text-lg">Go CD</h3>
+			<p class="py-4">
+				A lightweight and fast Continuous Deployment utility for Docker. It allows you to update your containers using tokens, making it easy to manage deployments in Docker Compose-based infrastructures.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/docker-icon.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://github.com/yyewolf/gocd" target="_blank"
+					>Github</a
+				>
+				<label for="modal-gocd" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-entvis" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<h3 class="font-bold text-lg">EntVis</h3>
+			<p class="py-4">
+				An extension for the Ent ORM that provides a simple way to control field visibility in API responses based on user roles. Makes it easy to implement role-based access control for REST APIs without custom serialization logic.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://github.com/yyewolf/entvis" target="_blank"
+					>Github</a
+				>
+				<label for="modal-entvis" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-i" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<h3 class="font-bold text-lg">4T's Instance Operator</h3>
+			<p class="py-4">
+				A Kubernetes operator built for CTF competitions that manages dynamic instances of challenges. It handles the lifecycle of containerized challenges, ensuring efficient resource allocation and proper isolation.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/kubernetes.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://github.com/4T-24/i" target="_blank"
+					>Github</a
+				>
+				<label for="modal-i" class="btn">Close</label>
+			</div>
+		</div>
+	</div>
+
+	<input type="checkbox" id="modal-terraform" class="modal-toggle" />
+	<div class="modal">
+		<div class="modal-box">
+			<h3 class="font-bold text-lg">Terraform Provider Infomaniak</h3>
+			<p class="py-4">
+				An official Terraform provider for Infomaniak, allowing users to manage their Infomaniak resources through Infrastructure as Code. This provider enables automation of Infomaniak's cloud services and resources.
+			</p>
+			<div class="flex flex-row mt-2 justify-center">
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/go.svg" />
+				<img class="h-10 w-10" src="https://cdn.svgporn.com/logos/terraform-icon.svg" />
+			</div>
+			<div class="modal-action">
+				<a class="btn btn-primary" href="https://github.com/Infomaniak/terraform-provider-infomaniak" target="_blank"
+					>Github</a
+				>
+				<label for="modal-terraform" class="btn">Close</label>
 			</div>
 		</div>
 	</div>
